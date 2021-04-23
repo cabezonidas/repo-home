@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "@cabezonidas/shop-ui/assets/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { UiProvider } from "@cabezonidas/shop-ui";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <UiProvider palette="blood">
+      <App />
+    </UiProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
