@@ -4,6 +4,7 @@ import "@cabezonidas/shop-ui/assets/style.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { UiProvider } from "@cabezonidas/shop-ui";
+import "./i18n";
 
 ReactDOM.render(
   <React.StrictMode>
