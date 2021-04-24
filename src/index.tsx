@@ -5,11 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { UiProvider } from "@cabezonidas/shop-ui";
 import "./i18n";
+import { NetworkProvider } from "./network-provider";
 
 ReactDOM.render(
   <React.StrictMode>
     <UiProvider palette="blood">
-      <App />
+      <NetworkProvider>
+        <App />
+      </NetworkProvider>
     </UiProvider>
   </React.StrictMode>,
   document.getElementById("root")
