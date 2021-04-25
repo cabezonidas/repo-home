@@ -1,4 +1,5 @@
-import { Box } from "@cabezonidas/shop-ui";
+import { Box, useBreakpoint } from "@cabezonidas/shop-ui";
+import styled from "@cabezonidas/shop-ui/lib/theme/styled";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { useSearchAlbums } from "../api/use-search-albums";
@@ -51,21 +52,41 @@ export const Gallery = React.forwardRef<HTMLDivElement, React.ComponentProps<typ
       }
     }, [fetchNextPage, hasNextPage, inView, isFetchingNextPage]);
 
+    const { isLarge, isMediumLarge } = useBreakpoint();
+
+    const fontSizeHeading = isLarge ? 100 : isMediumLarge ? 80 : 55;
+
     return (
-      <Box
-        ref={ref}
-        display="grid"
-        style={{
-          rowGap: 10,
-          columnGap: 10,
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-        }}
-        {...props}
-      >
-        {albums.map(album => (
-          <Thumbnail key={album.link} {...album} ref={album.newIndex ? thumbnailRef : undefined} />
-        ))}
+      <Box ref={ref} {...props}>
+        <Heading css={{}} mb="8" textAlign="center" fontSize={fontSizeHeading}>
+          Galería de recuerdos
+        </Heading>
+        <Box
+          display="grid"
+          style={{
+            rowGap: 10,
+            columnGap: 10,
+            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          }}
+        >
+          {albums.map(album => (
+            <Thumbnail
+              key={album.link}
+              {...album}
+              ref={album.newIndex ? thumbnailRef : undefined}
+            />
+          ))}
+        </Box>
       </Box>
     );
   }
 );
+
+const Heading = styled(Box)(() => ({
+  fontFamily: "'Tangerine', cursive",
+  padding: 30,
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  userSelect: "none",
+}));

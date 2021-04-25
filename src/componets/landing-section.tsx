@@ -55,23 +55,23 @@ const Container = styled(Box)`
 
 const Title = React.memo(() => {
   const { isLarge, isMediumLarge, isMedium } = useBreakpoint();
-  const fontSize = isLarge ? 130 : isMediumLarge ? 100 : isMedium ? 75 : 44;
+  const fontSize = isLarge ? 150 : isMediumLarge ? 120 : isMedium ? 100 : 80;
   const fontSizeLogo = isLarge ? 130 : isMediumLarge ? 100 : 55;
   return (
     <Box>
-      <Paragraph css={{}} {...{ fontSize }} textAlign="center">
+      <Years css={{}} {...{ fontSize }} textAlign="center">
         1992 - 2021
-      </Paragraph>
+      </Years>
       <Box display="flex" justifyContent="center" my="8">
         <LogoContainer>
           <Logo {...{ fontSize: fontSizeLogo }}>De las Artes</Logo>
         </LogoContainer>
       </Box>
-      <Heading css={{}} mt="8">
-        Fin de un ciclo
+      <Heading css={{}} my="5">
+        🍾 Fin de un ciclo 🎉
       </Heading>
-      <Paragraph mb="8" textAlign="center">
-        Infinitas gracias por habernos acompañado tantos años
+      <Paragraph mb="3" textAlign="center">
+        Las puertas de nuestro local se cierran, pero nosotros seguimos estando!
       </Paragraph>
     </Box>
   );
@@ -80,6 +80,16 @@ const Title = React.memo(() => {
 const Heading = styled(H1)(({ theme }) => ({
   textAlign: "center",
   textTransform: "uppercase",
+}));
+
+const Years = styled(Paragraph)(() => ({
+  fontFamily: "'Tangerine', cursive",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  userSelect: "none",
+  textAlign: "center",
+  marginTop: "-10%",
 }));
 
 const Logo = styled(Box)(() => ({
