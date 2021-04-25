@@ -58,9 +58,13 @@ export const Gallery = React.forwardRef<HTMLDivElement, React.ComponentProps<typ
 
     return (
       <Box ref={ref} {...props}>
-        <Heading css={{}} mb="8" textAlign="center" fontSize={fontSizeHeading}>
+        <Heading css={{}} textAlign="center" fontSize={fontSizeHeading}>
           Galería de recuerdos
         </Heading>
+
+        <Box mb="8" textAlign="center">
+          Una nostálgica galería de fotos de las especialidades que solíamos hacer
+        </Box>
         <Box
           display="grid"
           style={{

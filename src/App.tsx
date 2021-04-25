@@ -10,6 +10,7 @@ import {
   useTranslation,
   Whatsapp,
 } from "@cabezonidas/shop-ui";
+import styled from "@cabezonidas/shop-ui/lib/theme/styled";
 import { Gallery } from "./componets/gallery";
 import { Info } from "./componets/info";
 import { LandingSection } from "./componets/landing-section";
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <ResponsiveLayout
-      header={<Box data-testid="repo-header">{t("app.title")}</Box>}
+      header={<CompanyName data-testid="repo-header">{t("app.title")}</CompanyName>}
       nav={
         <>
           <NavLink css={{}} href="https://api.whatsapp.com/send?phone=5491127778899">
@@ -87,9 +88,19 @@ function App() {
     >
       <LandingSection />
       <Info />
-      <Gallery maxWidth="90%" mx="auto" mb="100px" />
+      <Gallery mt="20px" maxWidth="90%" mx="auto" mb="100px" />
     </ResponsiveLayout>
   );
 }
 
 export default App;
+
+const CompanyName = styled(Box)(() => ({
+  marginBottom: -4,
+  fontSize: 30,
+  fontFamily: "'Tangerine', cursive",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  userSelect: "none",
+}));

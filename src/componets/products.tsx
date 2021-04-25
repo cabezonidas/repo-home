@@ -31,7 +31,7 @@ export const Products = React.forwardRef<HTMLDivElement, React.ComponentProps<ty
           Catálogo
         </Heading>
         <Box mb="2" textAlign="center">
-          Recuerda escribirnos a nuestro WhatsApp para concretar el pedido
+          Recuerda escribirnos a nuestro WhatsApp para concretar un pedido
         </Box>
         <Box px="14px" overflow="hidden">
           <Box maxWidth="500px" mb="4" mx="auto">

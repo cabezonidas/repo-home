@@ -81,7 +81,7 @@ export const Info = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof
           gridTemplateColumns={`repeat(4, ${isMediumSmall ? "100px" : "65px"})`}
           width="max-content"
           mx="auto"
-          my="50px"
+          mt="50px"
           textAlign="center"
         >
           <Box>🍰</Box>
