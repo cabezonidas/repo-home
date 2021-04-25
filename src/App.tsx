@@ -1,6 +1,7 @@
 import { Box, ResponsiveLayout, useTranslation } from "@cabezonidas/shop-ui";
 import React from "react";
 import { Gallery } from "./componets/gallery";
+import { LandingSection } from "./componets/landing-section";
 
 const enUs = {
   title: "De las Artes",
@@ -15,9 +16,8 @@ function App() {
   i18n.addResourceBundle("es-AR", "translation", { app: esAr }, true, true);
   return (
     <ResponsiveLayout header={<Box data-testid="repo-header">{t("app.title")}</Box>}>
-      <Box>
-        <Gallery />
-      </Box>
+      <LandingSection />
+      <Gallery />
     </ResponsiveLayout>
   );
 }
