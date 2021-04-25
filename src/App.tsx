@@ -35,7 +35,7 @@ function App() {
           <NavLink css={{}} href="https://api.whatsapp.com/send?phone=5491127778899">
             <Box display="grid" gridTemplateColumns="auto 1fr" gridGap="4">
               <Whatsapp css={{}} />
-              <Box>11 2777 8899</Box>
+              <Box>11 2777 8899 (Sólo mensajes)</Box>
             </Box>
           </NavLink>
           <NavLink css={{}} href="https://www.instagram.com/ReposteriaDeLasArtes">

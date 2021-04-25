@@ -24,14 +24,14 @@ export const Info = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof
       <Container ref={ref} {...props}>
         <Fader />
         <Heading css={{}} mb="8" textAlign="center" fontSize={fontSizeHeading}>
-          Claudio y Marcela
+          Marcela y Claudio
         </Heading>
         <Box style={style}>
           <Img1
             src={pic1}
             my="auto"
             width={"80%"}
-            alt={"Claudio y Marcela"}
+            alt={"Marcela y Claudio"}
             m={!isMediumSmall ? "auto" : undefined}
             ml={isMediumSmall ? "auto" : undefined}
             pr={isMediumSmall ? "20px" : undefined}
@@ -46,7 +46,7 @@ export const Info = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof
             mx={!isMediumSmall ? "auto" : undefined}
           >
             <Box>
-              ¡Hola! 👋🏻 Espero que estés muy bien. Nosotros, Claudio y Marcela, fundamos De las
+              ¡Hola! 👋🏻 Espero que estés muy bien. Nosotros, Marcela y Claudio, fundamos De las
               Artes en 1992.
             </Box>
             <Box>
@@ -71,7 +71,7 @@ export const Info = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof
               <Anchor css={{}} href="https://api.whatsapp.com/send?phone=5491127778899">
                 11 2777 8899
               </Anchor>{" "}
-              (WhatsApp)
+              (WhatsApp - Sólo mensajes)
             </Box>
           </Box>
         </Box>
