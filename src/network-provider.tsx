@@ -22,7 +22,7 @@ export const NetworkProvider: React.FC = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <ReactQueryDevtools position="bottom-right" />
+      <ReactQueryDevtools position="top-right" />
     </QueryClientProvider>
   );
 };
