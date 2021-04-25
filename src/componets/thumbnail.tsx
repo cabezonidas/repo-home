@@ -24,18 +24,25 @@ const Container = styled(Box)<{ cover: string }>(({ cover, theme }) => ({
   display: "flex",
   alignItems: "flex-end",
   justifyContent: "center",
-  minHeight: 200,
-  minWidth: 200,
+  minHeight: 250,
+  minWidth: 250,
   backgroundImage: `url(${cover})`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "50%",
+  backgroundSize: "cover",
   cursor: "pointer",
   color: theme.colors.neutral.light,
-  transition: "font-size ease 0.2s",
+  transition: "font-size ease 0.2s, filter ease 0.5s",
   textShadow: "0 2px 5px #000",
+  filter: "grayscale(80%)",
   fontSize: 22,
   "&:hover": {
     fontSize: 24,
+    filter: "grayscale(0%)",
+  },
+  "&:focus": {
+    fontSize: 24,
+    filter: "grayscale(0%)",
   },
 })).withComponent("button");
 
