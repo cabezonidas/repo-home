@@ -1,7 +1,8 @@
 {
   "name": "repo-home",
   "version": "0.1.0",
-  "private": true,
+  "author": "Cabe <sebastian.scd@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@cabezonidas/shop-ui": "^1.0.57",
     "@testing-library/jest-dom": "^5.11.4",
