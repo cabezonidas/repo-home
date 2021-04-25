@@ -4,3 +4,5 @@ export const flickr = {
   user_id: "85024949@N08",
   format: "json",
 };
+
+export const api = "https://delasartes.azurewebsites.net/api";
