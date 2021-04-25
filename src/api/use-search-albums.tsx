@@ -1,12 +1,7 @@
-import { useQuery } from "react-query";
-import { UseQueryOptions as Options } from "react-query";
+import { useInfiniteQuery } from "react-query";
+import { UseInfiniteQueryOptions as Options } from "react-query";
 import { flickr } from "../config";
 import { flickrFetcher } from "./fetcher";
-
-interface IPaginated {
-  page: number;
-  per_page: number;
-}
 
 interface IAlbum {
   id: string;
@@ -36,19 +31,13 @@ interface IResult {
   stat: string;
 }
 
-export const useSearchAlbums = (
-  params: {
-    variables?: IPaginated;
-  } & Options<IResult> = {}
-) => {
-  const { variables = { page: 1, per_page: 4 }, ...options } = params;
-  const { page, per_page } = variables;
+export const useSearchAlbums = (params: Options<IResult> = {}) => {
   const { path, api_key, user_id, format } = flickr;
   const method = "flickr.photosets.getList";
 
-  return useQuery<IResult>(
-    ["albums", page, per_page],
-    () =>
+  return useInfiniteQuery<IResult>(
+    ["albums"],
+    ({ pageParam = 0 }: { pageParam?: number }) =>
       flickrFetcher(
         `${path}${new URLSearchParams(
           Object.entries({
@@ -56,11 +45,11 @@ export const useSearchAlbums = (
             api_key,
             user_id,
             format,
-            page: String(page),
-            per_page: String(per_page),
+            page: String(pageParam),
+            per_page: "20",
           })
         )}`
       ),
-    options
+    params
   );
 };
