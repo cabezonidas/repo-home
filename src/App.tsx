@@ -11,7 +11,6 @@ import {
   Whatsapp,
 } from "@cabezonidas/shop-ui";
 import styled from "@cabezonidas/shop-ui/lib/theme/styled";
-import { Gallery } from "./componets/gallery";
 import { Info } from "./componets/info";
 import { LandingSection } from "./componets/landing-section";
 
@@ -87,8 +86,7 @@ function App() {
       }
     >
       <LandingSection />
-      <Info />
-      <Gallery mt="20px" maxWidth="90%" mx="auto" mb="100px" />
+      <Info marginBottom={40} />
     </ResponsiveLayout>
   );
 }
