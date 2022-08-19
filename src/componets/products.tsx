@@ -33,7 +33,11 @@ export const Products = React.forwardRef<HTMLDivElement, React.ComponentProps<ty
         <Box mb="2" textAlign="center">
           Recuerda escribirnos a nuestro WhatsApp para concretar un pedido
         </Box>
-        {isLoading && <Box>Cargando...</Box>}
+        {isLoading && (
+          <Box maxWidth="500px" my="6" mx="auto" textAlign={"center"}>
+            Cargando catálogo...
+          </Box>
+        )}
         {isSuccess && (
           <Box px="14px" overflow="hidden">
             <Box maxWidth="500px" mb="4" mx="auto">
