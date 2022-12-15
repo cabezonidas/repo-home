@@ -66,9 +66,6 @@ function App() {
             alignItems="center"
           >
             <Box />
-            <FooterLink css={{}} href="mailto:info@delasartes.com.ar">
-              <Email css={{}} />
-            </FooterLink>
             <FooterLink css={{}} href="https://api.whatsapp.com/send?phone=5491127778899">
               <Whatsapp css={{}} />
             </FooterLink>
