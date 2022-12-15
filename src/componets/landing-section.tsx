@@ -70,9 +70,6 @@ const Title = React.memo(() => {
       <Heading css={{}} my="5">
         🍾 Fin de un ciclo 🎉
       </Heading>
-      <Paragraph mb="3" textAlign="center">
-        Las puertas de nuestro local se cierran, pero nosotros seguimos estando!
-      </Paragraph>
     </Box>
   );
 });
