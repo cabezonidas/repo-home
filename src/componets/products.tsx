@@ -1,14 +1,10 @@
-import { Box, Input, Label, useBreakpoint } from "@cabezonidas/shop-ui";
+import { Box, Input, Instagram, Label, NavLink, Whatsapp } from "@cabezonidas/shop-ui";
 import React from "react";
 import { useProducts } from "../api/use-products";
 import { matchSorter } from "match-sorter";
-import styled from "@cabezonidas/shop-ui/lib/theme/styled";
 
 export const Products = React.forwardRef<HTMLDivElement, React.ComponentProps<typeof Box>>(
   (props, ref) => {
-    const { isLarge, isMediumLarge } = useBreakpoint();
-
-    const fontSizeHeading = isLarge ? 100 : isMediumLarge ? 80 : 55;
     const { data, isLoading, isSuccess } = useProducts();
 
     type Item = NonNullable<typeof data>[number]["items"][number];
@@ -27,11 +23,45 @@ export const Products = React.forwardRef<HTMLDivElement, React.ComponentProps<ty
 
     return (
       <Box ref={ref} {...props}>
-        <Heading css={{}} textAlign="center" fontSize={fontSizeHeading}>
-          Catálogo
-        </Heading>
-        <Box mb="2" textAlign="center">
-          Recuerda escribirnos a nuestro WhatsApp para concretar un pedido
+        <Box display="grid" textAlign="center" marginTop={"10px"}>
+          <NavLink
+            css={{}}
+            href="https://api.whatsapp.com/send?phone=5491127778899"
+            style={{ width: "unset", borderRadius: 5, background: "#5a755b" }}
+            margin="auto"
+          >
+            <Box
+              display="grid"
+              gridTemplateColumns="auto 1fr"
+              gridGap="4"
+              width="max-content"
+              margin="auto"
+              alignItems="center"
+              style={{ fontSize: "x-large" }}
+            >
+              <Whatsapp css={{}} />
+              <Box>11 2777 8899 (Sólo mensajes)</Box>
+            </Box>
+          </NavLink>
+          <NavLink
+            css={{}}
+            href="https://www.instagram.com/ReposteriaDeLasArtes"
+            style={{ width: "unset" }}
+            margin="auto"
+          >
+            <Box
+              display="grid"
+              gridTemplateColumns="auto 1fr"
+              gridGap="4"
+              width="max-content"
+              margin="auto"
+              alignItems="center"
+              style={{ fontSize: "large" }}
+            >
+              <Instagram css={{}} />
+              <Box>@ReposteriaDeLasArtes</Box>
+            </Box>
+          </NavLink>
         </Box>
         {isLoading && (
           <Box maxWidth="500px" my="6" mx="auto" textAlign={"center"}>
@@ -80,12 +110,3 @@ export const Products = React.forwardRef<HTMLDivElement, React.ComponentProps<ty
     );
   }
 );
-
-const Heading = styled(Box)(() => ({
-  fontFamily: "'Tangerine', cursive",
-  padding: 30,
-  whiteSpace: "nowrap",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  userSelect: "none",
-}));
